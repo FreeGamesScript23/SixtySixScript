@@ -1,0 +1,43 @@
+<?php
+if(isset($_POST['submit'])) {
+    $fullname = $_POST['fullname'];
+    $password = $_POST['password'];
+    $age = $_POST['age'];
+    $preferredCar = $_POST['preferredCar'];
+    $checkbox = $_POST['checkbox'];
+    $favoriteColor = $_POST['favoriteColor'];
+
+    echo "Full Name: " . $fullname . "<br>";
+    echo "Password: " . $password . "<br>";
+    echo "Age: " . $age . "<br>";
+    echo "Preferred Car: " . $preferredCar . "<br>";
+    echo "Checkbox: ";
+    foreach($checkbox as $value) {
+        echo $value . ", ";
+    }
+    echo "<br>";
+    echo "Favorite Color: " . $favoriteColor;
+}
+?>
+
+<form method="POST">
+    Full Name: <input type="text" name="fullname"><br>
+    Password: <input type="password" name="password"><br>
+    Age:
+    <input type="radio" name="age" value="18-25">18-25
+    <input type="radio" name="age" value="26-35">26-35
+    <input type="radio" name="age" value="36-45">36-45<br>
+    Preferred Car:
+    <select name="preferredCar">
+        <option value="Sedan">Sedan</option>
+        <option value="SUV">SUV</option>
+        <option value="Sports Car">Sports Car</option>
+    </select><br>
+    Checkbox:
+    <input type="checkbox" name="checkbox[]" value="Option 1">Option 1
+    <input type="checkbox" name="checkbox[]" value="Option 2">Option 2
+    <input type="checkbox" name="checkbox[]" value="Option 3">Option 3<br>
+    Favorite Color:
+    <input type="text" name="favoriteColor"><br>
+    <input type="submit" name="submit" value="Submit">
+</form>
